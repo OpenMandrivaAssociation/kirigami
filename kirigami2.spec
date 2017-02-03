@@ -17,6 +17,7 @@ BuildRequires: cmake(Qt5Test)
 BuildRequires: cmake(Qt5Svg)
 BuildRequires: cmake(Qt5)
 BuildRequires: cmake(Qt5Core)
+BuildRequires: cmake(Qt5QuickControls2)
 
 %description
 Kirigami is KDE’s lightweight user interface framework for mobile and
