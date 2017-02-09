@@ -43,4 +43,10 @@ laid out in the Kirigami Human Interface Guidelines.
 %install
 %ninja_install -C build
 
-%files
+%find_lang libkirigami2plugin_qt
+
+%files -f libkirigami2plugin_qt.lang
+%dir %{_libdir}/cmake/KF5Kirigami2
+%{_libdir}/qt5/qml/org/kde/kirigami.2
+%{_libdir}/cmake/KF5Kirigami2/*.cmake
+%{_libdir}/qt5/mkspecs/modules/*.pri
