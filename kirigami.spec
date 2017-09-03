@@ -3,9 +3,9 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kirigami
-Version: 5.37.0
+Version: 5.38.0
 Release: 1
-Source0: http://download.kde.org/%{stable}/%{name}/%{name}-%{version}.tar.xz
+Source0: http://download.kde.org/%{stable}/%{name}/%{name}2-%{version}.tar.xz
 Summary: KDE user interface framework for mobile and convergent applications
 URL: http://kde.org/
 License: GPL
@@ -34,7 +34,7 @@ application building blocks, following the design philosophy
 laid out in the Kirigami Human Interface Guidelines. 
 
 %prep
-%setup -q
+%setup -qn %{name}2-%{version}
 %apply_patches
 %cmake_kde5
 
