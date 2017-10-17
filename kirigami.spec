@@ -3,7 +3,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kirigami
-Version: 5.38.0
+Version: 5.39.0
 Release: 1
 Source0: http://download.kde.org/%{stable}/%{name}/%{name}2-%{version}.tar.xz
 Summary: KDE user interface framework for mobile and convergent applications
