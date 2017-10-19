@@ -1,6 +1,8 @@
 %define major 5
 %define debug_package %{nil}
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
+%define libname %mklibname kf5kirigami2 5
+%define devname %mklibname -d kf5kirigami2
 
 Name: kirigami
 Version: 5.39.0
@@ -19,6 +21,7 @@ BuildRequires: cmake(Qt5)
 BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5QuickControls2)
 BuildRequires: cmake(KF5Plasma)
+Requires: %{libname} = %{EVRD}
 %rename kirigami2
 
 %description
@@ -32,6 +35,29 @@ experience).
 It extends the touch-friendly Qt Quick Controls with larger
 application building blocks, following the design philosophy
 laid out in the Kirigami Human Interface Guidelines. 
+
+%package -n %{libname}
+Summary: Libraries for Kirigami
+Group: System/Libraries
+
+%description -n %{libname}
+Libraries for Kirigami
+
+%files -n %{libname}
+%{_libdir}/libKF5Kirigami2.so.*
+
+%package -n %{devname}
+Summary: Development files for Kirigami
+Group: Development/KDE and Qt
+Requires: %{libname} = %{EVRD}
+Provides: kirigami-devel = %{EVRD}
+
+%description -n %{devname}
+Development files for Kirigami
+
+%files -n %{devname}
+%{_libdir}/libKF5Kirigami2.so
+%{_includedir}/KF5/Kirigami2
 
 %prep
 %setup -qn %{name}2-%{version}
