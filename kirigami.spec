@@ -40,9 +40,10 @@ laid out in the Kirigami Human Interface Guidelines.
 %package -n %{libname}
 Summary: Libraries for Kirigami
 Group: System/Libraries
+Requires: %{name} = %{EVRD}
 
 %description -n %{libname}
-Libraries for Kirigami
+Libraries for Kirigami.
 
 %files -n %{libname}
 %{_libdir}/libKF5Kirigami2.so.*
@@ -54,11 +55,14 @@ Requires: %{libname} = %{EVRD}
 Provides: kirigami-devel = %{EVRD}
 
 %description -n %{devname}
-Development files for Kirigami
+Development files for Kirigami.
 
 %files -n %{devname}
+%dir %{_libdir}/cmake/KF5Kirigami2
 %{_libdir}/libKF5Kirigami2.so
 %{_includedir}/KF5/Kirigami2
+%{_libdir}/cmake/KF5Kirigami2/*.cmake
+%{_libdir}/qt5/mkspecs/modules/*.pri
 
 %prep
 %setup -qn %{name}2-%{version}
@@ -77,7 +81,4 @@ for i in .%{_datadir}/locale/*/*/*.qm; do
 done
 
 %files -f translations.lang
-%dir %{_libdir}/cmake/KF5Kirigami2
 %{_libdir}/qt5/qml/org/kde/kirigami.2
-%{_libdir}/cmake/KF5Kirigami2/*.cmake
-%{_libdir}/qt5/mkspecs/modules/*.pri
