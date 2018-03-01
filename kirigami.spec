@@ -23,6 +23,7 @@ BuildRequires: cmake(Qt5QuickControls2)
 BuildRequires: cmake(KF5Plasma)
 Requires: %{libname} = %{EVRD}
 Requires: qt5-qtquickcontrols
+Requires: qt5-qtgraphicaleffects
 %rename kirigami2
 
 %description
