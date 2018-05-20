@@ -5,7 +5,7 @@
 %define devname %mklibname -d kf5kirigami2
 
 Name: kirigami
-Version: 5.44.0
+Version: 5.46.0
 Release: 1
 Source0: http://download.kde.org/%{stable}/%{name}/%{name}2-%{version}.tar.xz
 Summary: KDE user interface framework for mobile and convergent applications
@@ -20,7 +20,6 @@ BuildRequires: cmake(Qt5Svg)
 BuildRequires: cmake(Qt5)
 BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5QuickControls2)
-BuildRequires: cmake(KF5Plasma)
 Requires: %{libname} = %{EVRD}
 Requires: qt5-qtquickcontrols
 Requires: qt5-qtgraphicaleffects
