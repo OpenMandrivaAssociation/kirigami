@@ -5,7 +5,7 @@
 %define devname %mklibname -d kf5kirigami2
 
 Name: kirigami
-Version: 5.46.0
+Version: 5.47.0
 Release: 1
 Source0: http://download.kde.org/%{stable}/%{name}/%{name}2-%{version}.tar.xz
 Summary: KDE user interface framework for mobile and convergent applications
