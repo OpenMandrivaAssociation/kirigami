@@ -20,6 +20,8 @@ BuildRequires: cmake(Qt5Svg)
 BuildRequires: cmake(Qt5)
 BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5QuickControls2)
+BuildRequires: cmake(Qt5DBus)
+BuildRequires: qt5-qtgraphicaleffects
 Requires: %{libname} = %{EVRD}
 Requires: qt5-qtquickcontrols
 Requires: qt5-qtgraphicaleffects
