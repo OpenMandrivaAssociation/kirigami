@@ -5,8 +5,8 @@
 %define devname %mklibname -d kf5kirigami2
 
 Name: kirigami
-Version: 5.56.1
-Release: 2
+Version: 5.57.0
+Release: 1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version}|cut -d. -f1-2)/%{name}2-%{version}.tar.xz
 Summary: KDE user interface framework for mobile and convergent applications
 URL: http://kde.org/
@@ -22,6 +22,8 @@ BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5QuickControls2)
 BuildRequires: cmake(Qt5DBus)
 BuildRequires: qt5-qtgraphicaleffects
+# For QCH format docs
+BuildRequires: qt5-assistant
 Requires: %{libname} = %{EVRD}
 Requires: qt5-qtquickcontrols
 Requires: qt5-qtgraphicaleffects
@@ -59,6 +61,14 @@ Provides: kirigami-devel = %{EVRD}
 %description -n %{devname}
 Development files for Kirigami.
 
+%package -n %{name}-devel-docs
+Summary: Developer documentation for %{name} for use with Qt Assistant
+Group: Documentation
+Suggests: %{devname} = %{EVRD}
+
+%description -n %{name}-devel-docs
+Developer documentation for %{name} for use with Qt Assistant
+
 %files -n %{devname}
 %dir %{_libdir}/cmake/KF5Kirigami2
 %{_libdir}/libKF5Kirigami2.so
@@ -67,8 +77,7 @@ Development files for Kirigami.
 %{_libdir}/qt5/mkspecs/modules/*.pri
 
 %prep
-%setup -qn %{name}2-%{version}
-%apply_patches
+%autosetup -p1 -n %{name}2-%{version}
 %cmake_kde5
 
 %build
@@ -84,3 +93,6 @@ done
 
 %files -f translations.lang
 %{_libdir}/qt5/qml/org/kde/kirigami.2
+
+%files -n %{name}-devel-docs
+%{_docdir}/qt5/*.{tags,qch}
