@@ -23,6 +23,7 @@ BuildRequires: cmake(Qt5QuickControls2)
 BuildRequires: cmake(Qt5DBus)
 BuildRequires: qt5-qtgraphicaleffects
 # For QCH format docs
+BuildRequires: doxygen
 BuildRequires: qt5-assistant
 Requires: %{libname} = %{EVRD}
 Requires: qt5-qtquickcontrols
