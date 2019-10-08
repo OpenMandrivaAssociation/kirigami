@@ -5,7 +5,7 @@
 %define devname %mklibname -d kf5kirigami2
 
 Name: kirigami
-Version: 5.62.0
+Version: 5.63.0
 Release: 1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version}|cut -d. -f1-2)/%{name}2-%{version}.tar.xz
 Summary: KDE user interface framework for mobile and convergent applications
@@ -76,6 +76,7 @@ Developer documentation for %{name} for use with Qt Assistant
 %{_includedir}/KF5/Kirigami2
 %{_libdir}/cmake/KF5Kirigami2/*.cmake
 %{_libdir}/qt5/mkspecs/modules/*.pri
+%{_datadir}/kdevappwizard/templates/kirigami.tar.bz2
 
 %prep
 %autosetup -p1 -n %{name}2-%{version}
