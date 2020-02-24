@@ -46,7 +46,7 @@ laid out in the Kirigami Human Interface Guidelines.
 Summary: Libraries for Kirigami
 Group: System/Libraries
 Requires: %{name} = %{EVRD}
-%rename %{lib}kf5kirigami2_5
+%rename %{_lib}kf5kirigami2_5
 
 %description -n %{libname}
 Libraries for Kirigami.
