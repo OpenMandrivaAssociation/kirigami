@@ -1,8 +1,8 @@
 %define major 5
 %define debug_package %{nil}
-%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-%define libname %mklibname kf5kirigami2 5
-%define devname %mklibname -d kf5kirigami2
+%define stable %([ "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
+%define libname %mklibname KF5Kirigami2 5
+%define devname %mklibname -d KF5Kirigami2
 
 Name: kirigami
 Version: 5.67.1
@@ -46,6 +46,7 @@ laid out in the Kirigami Human Interface Guidelines.
 Summary: Libraries for Kirigami
 Group: System/Libraries
 Requires: %{name} = %{EVRD}
+%rename %{lib}kf5kirigami2_5
 
 %description -n %{libname}
 Libraries for Kirigami.
@@ -58,6 +59,7 @@ Summary: Development files for Kirigami
 Group: Development/KDE and Qt
 Requires: %{libname} = %{EVRD}
 Provides: kirigami-devel = %{EVRD}
+%rename %{_lib}kf5kirigami2-devel
 
 %description -n %{devname}
 Development files for Kirigami.
