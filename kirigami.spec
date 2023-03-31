@@ -5,7 +5,7 @@
 
 Name: kirigami
 Version: 5.104.0
-Release: 2
+Release: 3
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version}|cut -d. -f1-2)/%{name}2-%{version}.tar.xz
 Summary: KDE user interface framework for mobile and convergent applications
 URL: http://kde.org/
