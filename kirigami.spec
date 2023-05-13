@@ -29,6 +29,7 @@ Requires: %{libname} = %{EVRD}
 Requires: qt5-qtquickcontrols
 Requires: qt5-qtgraphicaleffects
 %rename kirigami2
+Obsoletes: kirigami1 < %{EVRD}
 
 %description
 Kirigami is KDE’s lightweight user interface framework for mobile and
