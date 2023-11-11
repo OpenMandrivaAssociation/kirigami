@@ -4,7 +4,7 @@
 %define devname %mklibname -d KF5Kirigami2
 
 Name: kirigami
-Version: 5.111.0
+Version: 5.112.0
 Release: 1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version}|cut -d. -f1-2)/%{name}2-%{version}.tar.xz
 Summary: KDE user interface framework for mobile and convergent applications
@@ -14,6 +14,7 @@ Group: System/Libraries
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(Qt5Qml)
 BuildRequires: cmake(Qt5Quick)
+BuildRequires: cmake(Qt5QuickTest)
 BuildRequires: cmake(Qt5Test)
 BuildRequires: cmake(Qt5Svg)
 BuildRequires: cmake(Qt5)
@@ -54,7 +55,6 @@ Libraries for Kirigami.
 
 %files -n %{libname}
 %{_libdir}/libKF5Kirigami2.so.*
-%{_libdir}/qt5/qml/org/kde/kirigami
 
 %package -n %{devname}
 Summary: Development files for Kirigami
